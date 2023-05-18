@@ -1,0 +1,124 @@
+@import "./assets/variables";
+@import "./assets/mixins";
+
+main {
+  @include flex(column, center, center);
+  background-color: $white;
+  border-radius: 30px 30px 100px 30px;
+  gap: 30px 0;
+  padding: 50px 6%;
+  width: 90vw;
+  max-width: 600px;
+  form {
+    display: flex;
+    gap: 0 20px;
+    div {
+      label {
+        color: $smokeyGrey;
+        font-family: "Poppins", sans-serif;
+        padding-bottom: 5px;
+        &.isInvalid {
+          color: $lightRed;
+        }
+      }
+      input {
+        border: 1px solid $lightGrey {
+          radius: 5px;
+        }
+        width: 22vw;
+        height: 45px;
+        font: {
+          family: "Poppins", sans-serif;
+          size: 20px;
+        }
+        color: $offBlack;
+        padding: 10px;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+        &:focus,
+        &:hover {
+          border: 1px solid $purple;
+        }
+        &.isInvalid {
+          border: 1px solid $lightRed;
+        }
+      }
+      span {
+        font-family: "Poppins", sans-serif;
+        font-style: italic;
+        color: $lightRed;
+        font-size: 10px;
+        display: none;
+        position: absolute;
+        transform: translateY(80px);
+        &.isInvalid {
+          display: block;
+        }
+      }
+    }
+  }
+  button {
+    background-color: $purple;
+    &:hover {
+      background-color: $offBlack;
+    }
+    border: none {
+      radius: 50px;
+    }
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    img {
+      width: 30px;
+    }
+  }
+  div {
+    @include flex(column, null, flex-start);
+    align-self: flex-start;
+    p {
+      font: {
+        size: 50px;
+        style: italic;
+        weight: 800;
+      }
+      span {
+        &:first-of-type {
+          color: $purple;
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    @include flex(column, center, flex-start);
+    border-radius: 30px 30px 140px 30px;
+    padding: 30px;
+    margin: auto;
+    gap: 0;
+    form {
+      div {
+        input {
+          width: 120px;
+        }
+        span {
+          font-size: 12px;
+        }
+      }
+    }
+    button {
+      align-self: flex-end;
+      width: 70px;
+      height: 70px;
+      img {
+        width: 40px;
+      }
+    }
+    div {
+      p {
+        font-size: 60px;
+        line-height: 70px;
+      }
+    }
+  }
+}

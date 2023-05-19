@@ -33,19 +33,17 @@ Users should be able to:
 ### Screenshot
 
 ![](./screenshot.jpg)
+## Mobile
+![Screen Shot 2023-05-20 at 00 52 46](https://github.com/thulanigamtee/react-age-calculator/assets/76236208/535e1877-51d6-4875-b1d0-7918dc7f5b87)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
+## Desktop
+![Screenshot 2023-05-20 at 00-52-15 React age calculator](https://github.com/thulanigamtee/react-age-calculator/assets/76236208/8b741c30-75b8-4312-8087-e6857106cf38)
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [open live site](https://lustrous-axolotl-96ad39.netlify.app/)
 
 ## My process
 

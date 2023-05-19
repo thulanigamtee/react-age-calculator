@@ -14,7 +14,7 @@ function App() {
   const [day, setDay] = useState<number | "">("");
   const [age, setAge] = useState<Age | null>(null);
 
-  const isFieldEmpty = (field: string): void => {
+  const isEmptyField = (field: string): void => {
     const Input = document.querySelectorAll(`#${field}`);
     Input.forEach((input) => {
       input.classList.add("isInvalid");
@@ -29,9 +29,9 @@ function App() {
     month: number | "",
     day: number | ""
   ): boolean => {
-    day ? null : isFieldEmpty("day");
-    month ? null : isFieldEmpty("month");
-    year ? null : isFieldEmpty("year");
+    day ? null : isEmptyField("day");
+    month ? null : isEmptyField("month");
+    year ? null : isEmptyField("year");
 
     const date: Date = new Date(Number(year), Number(month) - 1, Number(day));
     const isValid: boolean =
@@ -44,16 +44,15 @@ function App() {
 
   const calculateAge = (): void => {
     if (!isValidDate(year, month, day)) {
-      // const validDate = document.querySelector(".errDay") as
-      //   | HTMLDivElement
-      //   | HTMLSpanElement;
-      // if (validDate) {
-      //   validDate.innerText = "Must be a valid date";
-      //   validDate.classList.add("isInvalid");
-      //   setTimeout(() => {
-      //     validDate.classList.remove("isInvalid");
-      //   }, 2000);
-      // }
+      const validDate = document.querySelector("#validDate") as
+        | HTMLDivElement
+        | HTMLSpanElement;
+      if (validDate && day != "" && month != "" && year != "") {
+        validDate.style.display = "block";
+        setTimeout(() => {
+          validDate.style.display = "none";
+        }, 2000);
+      }
       return;
     }
 
@@ -65,6 +64,15 @@ function App() {
     );
 
     if (selectedDate > currentDate) {
+      const isPast = document.querySelector("#isPast") as
+        | HTMLDivElement
+        | HTMLSpanElement;
+      if (isPast) {
+        isPast.style.display = "block";
+        setTimeout(() => {
+          isPast.style.display = "none";
+        }, 2000);
+      }
       return;
     }
 
@@ -126,9 +134,8 @@ function App() {
             onChange={handleChange}
             pattern="[0-9]*"
           />
-          <span id="day" className="errDay">
-            This field is required
-          </span>
+          <span id="day">This field is required</span>
+          <span id="validDate">Must be a valid date</span>
         </div>
         <div>
           <label htmlFor="month" id="month">
@@ -164,9 +171,8 @@ function App() {
             onChange={handleChange}
             pattern="[0-9]*"
           />
-          <span id="year" className="errYear">
-            This field is required
-          </span>
+          <span id="year">This field is required</span>
+          <span id="isPast">Must be in the past</span>
         </div>
       </form>
       <button onClick={calculateAge}>

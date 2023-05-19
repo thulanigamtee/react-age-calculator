@@ -42,7 +42,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [open solution](https://www.frontendmentor.io/solutions/age-calculator-using-react-and-scss-TznfotMFb-)
 - Live Site URL: [open live site](https://lustrous-axolotl-96ad39.netlify.app/)
 
 ## My process
